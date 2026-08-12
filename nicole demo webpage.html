@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Nicole Kawako Juliana — Renewable Energy Systems Engineer</title>
+<meta name="description" content="Nicole Kawako Juliana — electrical engineer and PhD researcher in renewable energy systems. Solar mini-grids, contextual engineering, Kampala to Urbana." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300..900;1,9..144,300..900&family=Archivo:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+/* ============ TOKENS ============ */
+:root{
+  --paper:#F4EEDF;
+  --paper-2:#ECE3CE;
+  --ink:#17251D;
+  --pine:#1D3C2F;
+  --pine-deep:#12291F;
+  --amber:#E9A13B;
+  --amber-soft:#F5C36E;
+  --clay:#CE6637;
+  --sage:#6E8375;
+  --line:rgba(23,37,29,.18);
+  --line-light:rgba(244,238,223,.22);
+  --disp:'Fraunces',serif;
+  --body:'Archivo',sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:var(--body);
+  font-size:16px;
+  line-height:1.6;
+  overflow-x:hidden;
+}
+::selection{background:var(--amber);color:var(--pine-deep)}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;background:none;border:none;color:inherit}
+.mono{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(1.2rem,4vw,3rem)}
+
+/* grain */
+.noise{position:fixed;inset:0;z-index:200;pointer-events:none;opacity:.05;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.7'/%3E%3C/svg%3E");}
+
+/* ============ NAV ============ */
+.nav{position:fixed;top:0;left:0;right:0;z-index:100;transition:background .35s,box-shadow .35s;padding:.9rem 0}
+.nav.scrolled{background:rgba(244,238,223,.92);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;gap:1rem}
+.logo{font-family:var(--disp);font-weight:700;font-size:1.15rem;letter-spacing:.02em}
+.logo em{font-style:italic;color:var(--clay)}
+.nav-links{display:flex;gap:1.6rem;align-items:center}
+.nav-links a{font-family:var(--mono);font-size:.68rem;letter-spacing:.14em;text-transform:uppercase;position:relative;padding:.3rem 0;color:var(--ink)}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--amber);transition:width .3s}
+.nav-links a:hover::after,.nav-links a.active::after{width:100%}
+.nav-status{font-family:var(--mono);font-size:.62rem;letter-spacing:.1em;color:var(--pine);border:1px solid var(--line);padding:.35rem .7rem;border-radius:99px;display:flex;gap:.5rem;align-items:center;white-space:nowrap}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--amber);animation:pulse 1.8s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.35;transform:scale(.7)}}
+.menu-btn{display:none;font-family:var(--mono);font-size:.7rem;letter-spacing:.14em;border:1px solid var(--line);padding:.45rem .8rem}
+@media(max-width:880px){
+  .nav-links{position:fixed;inset:0;background:var(--pine-deep);flex-direction:column;justify-content:center;gap:2rem;transform:translateY(-100%);transition:transform .45s cubic-bezier(.22,1,.36,1)}
+  .nav-links a{color:var(--paper);font-size:1rem}
+  body.nav-open .nav-links{transform:none}
+  .menu-btn{display:block;position:relative;z-index:110}
+  body.nav-open .menu-btn{color:var(--paper);border-color:var(--line-light)}
+  .nav-status{display:none}
+}
+
+/* ============ HERO ============ */
+.hero{padding:9.5rem 0 4rem;position:relative;
+  background-image:linear-gradient(var(--line) 1px,transparent 1px),linear-gradient(90deg,var(--line) 1px,transparent 1px);
+  background-size:64px 64px;background-position:center top;}
+.hero::before{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(244,238,223,.9),rgba(244,238,223,.35) 40%,var(--paper));pointer-events:none}
+.hero .wrap{position:relative}
+.hero-meta{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;border-top:1px solid var(--ink);border-bottom:1px solid var(--line);padding:.6rem 0;margin-bottom:3.2rem}
+.hero-meta span{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em}
+.hero-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:clamp(2rem,5vw,4.5rem);align-items:start}
+.hero-kick{color:var(--clay);margin-bottom:1.4rem;min-height:1.2em;display:block}
+.hero h1{font-family:var(--disp);font-weight:600;font-size:clamp(3rem,8.2vw,6.4rem);line-height:.98;letter-spacing:-.02em}
+.hero h1 .it{font-style:italic;font-weight:400;color:var(--pine)}
+.hero h1 .amp{color:var(--amber)}
+.hero-sub{max-width:34rem;margin-top:1.8rem;font-size:1.08rem;color:#31413a}
+.hero-sub strong{color:var(--ink)}
+.hero-cta{display:flex;gap:1rem;margin-top:2.4rem;flex-wrap:wrap}
+.btn{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;padding:1rem 1.8rem;border:1px solid var(--ink);transition:transform .25s,background .25s,color .25s;display:inline-block}
+.btn.solid{background:var(--ink);color:var(--paper)}
+.btn.solid:hover{background:var(--amber);color:var(--pine-deep);border-color:var(--amber);transform:translateY(-3px)}
+.btn.ghost:hover{background:var(--ink);color:var(--paper);transform:translateY(-3px)}
+
+/* telemetry panel */
+.telemetry{background:var(--pine-deep);color:var(--paper);border:1px solid var(--pine);padding:1.4rem;box-shadow:10px 10px 0 rgba(23,37,29,.12)}
+.tel-head{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line-light);padding-bottom:.8rem;margin-bottom:1rem}
+.tel-head .mono{color:var(--amber)}
+#wave{width:100%;height:130px;display:block}
+.tel-rows{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line-light);margin-top:1rem;border:1px solid var(--line-light)}
+.tel-cell{background:var(--pine-deep);padding:.85rem .9rem}
+.tel-cell .lbl{font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;color:var(--sage);display:block;margin-bottom:.35rem;text-transform:uppercase}
+.tel-cell .val{font-family:var(--mono);font-size:1.05rem;color:var(--amber-soft)}
+.tel-cell .val small{font-size:.62rem;color:var(--sage)}
+.soc-bar{height:6px;background:rgba(244,238,223,.15);margin-top:.45rem;overflow:hidden}
+.soc-fill{height:100%;background:var(--amber);width:72%;transition:width 1.2s ease}
+.tel-foot{margin-top:1rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;color:var(--sage);display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}
+@media(max-width:960px){.hero-grid{grid-template-columns:1fr}.telemetry{max-width:560px}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-top:none;background:var(--paper)}
+.stat{padding:1.6rem 1.4rem;border-right:1px solid var(--line)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:var(--disp);font-style:italic;font-size:clamp(2.2rem,4vw,3.2rem);color:var(--pine);display:block;line-height:1}
+.stat-l{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;color:#4c5a52;display:block;margin-top:.6rem}
+@media(max-width:760px){.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:none}.stat:nth-child(-n+2){border-bottom:1px solid var(--line)}}
+
+/* marquee */
+.marquee{background:var(--amber);border-top:1px solid var(--ink);border-bottom:1px solid var(--ink);overflow:hidden;padding:.85rem 0;margin-top:4.5rem}
+.marquee-track{display:flex;width:max-content;animation:marq 30s linear infinite}
+.marquee:hover .marquee-track{animation-play-state:paused}
+.marquee-track span{font-family:var(--mono);font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--pine-deep);white-space:nowrap;padding:0 1.4rem;display:flex;align-items:center;gap:1.4rem}
+.marquee-track span::after{content:"◆";font-size:.55rem;color:var(--clay)}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* ============ SECTIONS ============ */
+section{padding:clamp(4.5rem,9vw,7.5rem) 0}
+.sec-head{margin-bottom:clamp(2.5rem,5vw,4rem);max-width:52rem}
+.sec-kick{color:var(--clay);display:block;margin-bottom:1rem}
+.sec-title{font-family:var(--disp);font-weight:600;font-size:clamp(2.2rem,5vw,3.6rem);line-height:1.05;letter-spacing:-.015em}
+.sec-title .it{font-style:italic;font-weight:400;color:var(--clay)}
+.sec-sub{margin-top:1.2rem;color:#42514a}
+.mask{display:block;overflow:hidden}
+.mask-inner{display:block;transform:translateY(112%);transition:transform .9s cubic-bezier(.22,1,.36,1) .08s}
+.mask.in .mask-inner{transform:none}
+.reveal{opacity:0;transform:translateY(28px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,1,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.d1{transition-delay:.08s}.d2{transition-delay:.16s}.d3{transition-delay:.24s}.d4{transition-delay:.32s}
+
+/* ============ ABOUT ============ */
+.about-grid{display:grid;grid-template-columns:340px 1fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.about-sticky{position:sticky;top:110px}
+.portrait{position:relative;border:1px solid var(--ink);padding:.7rem;background:var(--paper-2)}
+.portrait img{width:100%;aspect-ratio:4/5;object-fit:cover;object-position:50% 20%}
+.portrait figcaption{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;padding-top:.7rem;display:flex;justify-content:space-between;color:#4c5a52}
+.portrait::after{content:"";position:absolute;inset:.7rem;background:linear-gradient(20deg,rgba(29,60,47,.28),transparent 55%);pointer-events:none}
+.facts{margin-top:1.6rem;border-top:1px solid var(--ink)}
+.fact{display:grid;grid-template-columns:96px 1fr;gap:1rem;padding:.75rem 0;border-bottom:1px solid var(--line);font-size:.86rem}
+.fact dt{font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase;color:var(--clay);padding-top:.2rem}
+.about-body p{margin-bottom:1.5rem;font-size:1.06rem;color:#2d3c34}
+.about-body p:first-of-type::first-letter{font-family:var(--disp);font-style:italic;font-size:3.4em;float:left;line-height:.8;padding:.08em .12em 0 0;color:var(--clay)}
+.pull{border-left:3px solid var(--amber);background:var(--paper-2);padding:1.6rem 1.8rem;margin:2.2rem 0;font-family:var(--disp);font-style:italic;font-size:1.35rem;line-height:1.4;color:var(--pine)}
+.route{margin-top:2.5rem;border:1px solid var(--line);background:var(--paper-2);padding:1.4rem}
+.route svg{width:100%;height:auto;display:block}
+.route-cap{font-family:var(--mono);font-size:.6rem;letter-spacing:.14em;text-transform:uppercase;color:#4c5a52;margin-top:.6rem;display:flex;justify-content:space-between;flex-wrap:wrap;gap:.4rem}
+@media(max-width:900px){.about-grid{grid-template-columns:1fr}.about-sticky{position:static;max-width:420px}}
+
+/* ============ FOCUS ============ */
+#focus{background:var(--paper-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.focus-row{display:grid;grid-template-columns:110px 1fr auto;gap:2rem;align-items:start;padding:2.2rem 1.2rem;border-top:1px solid var(--line);transition:background .35s,color .35s,padding-left .35s;position:relative}
+.focus-row:last-child{border-bottom:1px solid var(--line)}
+.focus-num{font-family:var(--disp);font-style:italic;font-size:2.2rem;color:var(--clay);line-height:1;transition:color .35s}
+.focus-row h3{font-family:var(--disp);font-weight:600;font-size:clamp(1.4rem,2.6vw,1.9rem);margin-bottom:.6rem}
+.focus-row p{max-width:44rem;color:#42514a;transition:color .35s}
+.focus-tags{display:flex;gap:.5rem;flex-wrap:wrap;margin-top:1rem}
+.chip{font-family:var(--mono);font-size:.58rem;letter-spacing:.12em;text-transform:uppercase;border:1px solid var(--line);padding:.32rem .65rem;border-radius:99px;transition:border-color .35s,color .35s}
+.focus-arrow{font-size:1.6rem;align-self:center;opacity:0;transform:translateX(-10px);transition:opacity .35s,transform .35s,color .35s}
+.focus-row:hover{background:var(--pine-deep);color:var(--paper);padding-left:2rem}
+.focus-row:hover p{color:#c9d4cc}
+.focus-row:hover .focus-num{color:var(--amber)}
+.focus-row:hover .chip{border-color:var(--line-light);color:var(--amber-soft)}
+.focus-row:hover .focus-arrow{opacity:1;transform:none;color:var(--amber)}
+@media(max-width:720px){.focus-row{grid-template-columns:1fr;gap:.8rem}.focus-arrow{display:none}}
+
+/* ============ WORK ============ */
+.work-grid{display:grid;grid-template-columns:1fr 1fr;gap:1.8rem}
+.proj{border:1px solid var(--ink);background:var(--paper);display:flex;flex-direction:column;transition:transform .3s,box-shadow .3s}
+.proj:hover{transform:translateY(-5px);box-shadow:8px 8px 0 rgba(23,37,29,.14)}
+.proj-img{overflow:hidden;position:relative;aspect-ratio:16/9;border-bottom:1px solid var(--ink)}
+.proj-img img{width:100%;height:100%;object-fit:cover;filter:sepia(.18) saturate(.92);transition:transform .9s cubic-bezier(.22,1,.36,1)}
+.proj:hover .proj-img img{transform:scale(1.07)}
+.proj-img::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(18,41,31,.35),transparent 45%);pointer-events:none}
+.proj-cat{position:absolute;top:.9rem;left:.9rem;z-index:2;background:var(--amber);color:var(--pine-deep);font-family:var(--mono);font-size:.58rem;letter-spacing:.14em;text-transform:uppercase;padding:.32rem .7rem}
+.proj-body{padding:1.5rem 1.5rem 1.2rem;flex:1}
+.proj-meta{display:flex;gap:1.4rem;font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:#6b7a70;margin-bottom:.8rem}
+.proj-body h3{font-family:var(--disp);font-weight:600;font-size:1.35rem;line-height:1.2;margin-bottom:.7rem}
+.proj-body>p{font-size:.94rem;color:#42514a}
+.proj-toggle{display:flex;justify-content:space-between;align-items:center;width:100%;padding:1rem 1.5rem;border-top:1px solid var(--line);font-family:var(--mono);font-size:.64rem;letter-spacing:.14em;text-transform:uppercase;color:var(--clay);transition:background .3s}
+.proj-toggle:hover{background:var(--paper-2)}
+.proj-toggle .sign{font-size:1rem;transition:transform .4s}
+.proj.open .proj-toggle .sign{transform:rotate(45deg)}
+.proj-details{display:grid;grid-template-rows:0fr;transition:grid-template-rows .5s cubic-bezier(.22,1,.36,1)}
+.proj.open .proj-details{grid-template-rows:1fr}
+.proj-details>div{overflow:hidden}
+.proj-details p{padding:0 1.5rem 1.3rem;font-size:.9rem;color:#42514a}
+.proj-details .focus-tags{padding:0 1.5rem 1.4rem;margin-top:0}
+@media(max-width:820px){.work-grid{grid-template-columns:1fr}}
+
+/* ============ TIMELINE ============ */
+#timeline{background:var(--pine-deep);color:var(--paper)}
+#timeline .sec-kick{color:var(--amber)}
+#timeline .sec-sub{color:#a8b8ae}
+.tfilters{display:flex;gap:.6rem;flex-wrap:wrap;margin-bottom:3rem}
+.tfilter{font-family:var(--mono);font-size:.62rem;letter-spacing:.13em;text-transform:uppercase;border:1px solid var(--line-light);color:#c9d4cc;padding:.5rem 1rem;border-radius:99px;transition:all .3s}
+.tfilter:hover{border-color:var(--amber)}
+.tfilter.active{background:var(--amber);color:var(--pine-deep);border-color:var(--amber)}
+.timeline{position:relative;padding-left:2.4rem}
+.tl-line{position:absolute;left:8px;top:4px;bottom:4px;width:2px;background:var(--line-light)}
+.tl-fill{position:absolute;left:0;top:0;width:100%;height:0;background:var(--amber)}
+.tl-item{position:relative;padding:1.6rem 0 2.2rem;border-bottom:1px solid rgba(244,238,223,.1);transition:opacity .4s}
+.tl-item.hide{display:none}
+.tl-item::before{content:"";position:absolute;left:-2.4rem;top:2.35rem;width:12px;height:12px;background:var(--pine-deep);border:2px solid var(--amber);border-radius:50%;margin-left:3px}
+.tl-date{font-family:var(--mono);font-size:.66rem;letter-spacing:.14em;color:var(--amber-soft);display:flex;gap:1rem;align-items:center;flex-wrap:wrap}
+.tl-tag{font-size:.55rem;border:1px solid var(--line-light);padding:.2rem .55rem;border-radius:99px;color:#a8b8ae;text-transform:uppercase;letter-spacing:.12em}
+.tl-item h3{font-family:var(--disp);font-weight:600;font-size:1.45rem;margin:.6rem 0 .15rem}
+.tl-org{font-family:var(--mono);font-size:.68rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);display:block;margin-bottom:.7rem}
+.tl-item p{max-width:46rem;color:#c2cfc6;font-size:.95rem}
+.tl-item:hover h3{color:var(--amber)}
+
+/* ============ PUBLICATIONS ============ */
+#publications{background:var(--pine);color:var(--paper)}
+#publications .sec-kick{color:var(--amber)}
+#publications .sec-sub{color:#a8b8ae}
+.pub{display:grid;grid-template-columns:90px 1fr auto;gap:2rem;padding:2rem 1rem;border-top:1px solid var(--line-light);align-items:baseline;transition:background .3s,padding-left .3s}
+.pub:last-child{border-bottom:1px solid var(--line-light)}
+.pub:hover{background:rgba(244,238,223,.05);padding-left:1.8rem}
+.pub-n{font-family:var(--disp);font-style:italic;font-size:1.9rem;color:transparent;-webkit-text-stroke:1px var(--amber)}
+.pub h3{font-family:var(--disp);font-weight:500;font-size:clamp(1.05rem,2vw,1.35rem);line-height:1.35}
+.pub-meta{font-family:var(--mono);font-size:.6rem;letter-spacing:.12em;text-transform:uppercase;color:var(--sage);text-align:right;white-space:nowrap}
+.pub-status{display:inline-block;margin-top:.5rem;font-family:var(--mono);font-size:.56rem;letter-spacing:.13em;text-transform:uppercase;color:var(--amber);border:1px solid var(--amber);padding:.22rem .6rem}
+@media(max-width:720px){.pub{grid-template-columns:1fr;gap:.6rem}.pub-meta{text-align:left}}
+
+/* ============ TOOLKIT ============ */
+.tool-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:clamp(2.5rem,6vw,5rem);align-items:start}
+.skill{margin-bottom:1.7rem}
+.skill-top{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:.5rem}
+.skill-top .mono{color:var(--clay)}
+.track{height:10px;background:var(--paper-2);border:1px solid var(--line);position:relative;overflow:hidden}
+.track::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,transparent 0 24px,var(--line) 24px 25px)}
+.fill{height:100%;background:var(--amber);width:0;transition:width 1.3s cubic-bezier(.22,1,.36,1);position:relative}
+.tool-side h3{font-family:var(--disp);font-size:1.2rem;font-weight:600;margin-bottom:1.2rem}
+.tool-side .focus-tags{margin-bottom:2.2rem}
+.tool-side .chip{background:var(--paper-2)}
+.cert{border:1px solid var(--ink);background:var(--pine-deep);color:var(--paper);padding:1.6rem;position:relative}
+.cert::before{content:"CERTIFIED";position:absolute;top:-11px;left:1.2rem;background:var(--amber);color:var(--pine-deep);font-family:var(--mono);font-size:.55rem;letter-spacing:.16em;padding:.25rem .7rem}
+.cert h4{font-family:var(--disp);font-size:1.15rem;font-weight:600;margin-bottom:.5rem;color:var(--amber-soft)}
+.cert p{font-size:.85rem;color:#c2cfc6}
+.cert .mono{display:block;margin-top:1rem;color:var(--sage);font-size:.58rem}
+@media(max-width:860px){.tool-grid{grid-template-columns:1fr}}
+
+/* ============ CONTACT ============ */
+#contact{background:var(--paper-2);border-top:1px solid var(--line)}
+.contact-title{font-family:var(--disp);font-weight:600;font-size:clamp(2.6rem,6.5vw,5rem);line-height:1.02;letter-spacing:-.02em;max-width:18ch}
+.contact-title .it{font-style:italic;color:var(--clay)}
+.c-rows{margin-top:3.5rem;border-top:1px solid var(--ink)}
+.c-row{display:grid;grid-template-columns:140px 1fr auto;gap:1.5rem;align-items:center;padding:1.6rem .6rem;border-bottom:1px solid var(--line);transition:background .3s,padding-left .3s;font-size:clamp(1.05rem,2.4vw,1.5rem);font-family:var(--disp)}
+.c-row .mono{font-size:.6rem;color:var(--clay)}
+.c-row .arrow{font-size:1.4rem;transition:transform .3s;color:var(--clay)}
+.c-row:hover{background:var(--paper);padding-left:1.4rem}
+.c-row:hover .arrow{transform:translateX(8px)}
+.refs{margin-top:4rem}
+.refs h3{font-family:var(--mono);font-size:.68rem;letter-spacing:.16em;text-transform:uppercase;color:var(--clay);margin-bottom:1.4rem}
+.ref-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.ref{border:1px solid var(--line);background:var(--paper);padding:1.3rem;font-size:.85rem}
+.ref strong{font-family:var(--disp);font-size:1.02rem;display:block;margin-bottom:.2rem}
+.ref .mono{color:#6b7a70;font-size:.56rem;display:block;margin-bottom:.6rem}
+.ref span.email{word-break:break-all;color:var(--pine);font-size:.78rem}
+@media(max-width:760px){.ref-grid{grid-template-columns:1fr}.c-row{grid-template-columns:1fr;gap:.3rem}}
+
+/* footer */
+footer{background:var(--pine-deep);color:#a8b8ae;padding:2rem 0}
+.foot{display:flex;justify-content:space-between;align-items:center;gap:1rem;flex-wrap:wrap;font-family:var(--mono);font-size:.6rem;letter-spacing:.13em;text-transform:uppercase}
+.foot a{color:var(--amber-soft)}
+.foot a:hover{color:var(--amber)}
+
+/* ============ REDUCED MOTION ============ */
+@media (prefers-reduced-motion: reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .marquee-track{animation:none;flex-wrap:wrap;width:auto}
+  .reveal,.mask-inner{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+<div class="noise" aria-hidden="true"></div>
+
+<!-- ================= NAV ================= -->
+<header class="nav" id="nav">
+  <div class="wrap nav-inner">
+    <a href="#top" class="logo">Kawako<em>·</em>N.J.</a>
+    <nav class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#focus">Focus</a>
+      <a href="#work">Work</a>
+      <a href="#timeline">Timeline</a>
+      <a href="#publications">Publications</a>
+      <a href="#toolkit">Toolkit</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <span class="nav-status"><span class="dot"></span>URBANA, IL · <span id="hz60">60.00</span> Hz</span>
+    <button class="menu-btn" id="menuBtn" aria-label="Toggle menu">MENU</button>
+  </div>
+</header>
+
+<!-- ================= HERO ================= -->
+<section class="hero" id="top">
+  <div class="wrap">
+    <div class="hero-meta">
+      <span>0.3476°N 32.5825°E — KAMPALA → 40.1106°N 88.2073°W — URBANA, ILLINOIS</span>
+      <span>PHD ABE · CLASS OF 2030</span>
+    </div>
+    <div class="hero-grid">
+      <div>
+        <span class="hero-kick mono" id="heroKick" data-text="Renewable Energy Systems · Contextual Engineering">Renewable Energy Systems · Contextual Engineering</span>
+        <h1>Nicole<br>Kawako <span class="it">Juliana</span><span class="amp">.</span></h1>
+        <p class="hero-sub">Electrical engineer by training, renewable-energy researcher by conviction. I study <strong>solar mini-grids and contextual energy systems</strong> — from the field in Uganda to the lab at the University of Illinois Urbana-Champaign.</p>
+        <div class="hero-cta">
+          <a href="#work" class="btn solid">See the research ↓</a>
+          <a href="#contact" class="btn ghost">Get in touch</a>
+        </div>
+      </div>
+      <aside class="telemetry reveal" aria-label="Mini-grid telemetry panel">
+        <div class="tel-head">
+          <span class="mono">LIVE — MINI-GRID TELEMETRY</span>
+          <span class="dot"></span>
+        </div>
+        <canvas id="wave" height="130"></canvas>
+        <div class="tel-rows">
+          <div class="tel-cell"><span class="lbl">PV Array</span><span class="val" id="pv">42.7 <small>kW</small></span></div>
+          <div class="tel-cell"><span class="lbl">Battery SOC</span><span class="val" id="soc">72<small>%</small></span><div class="soc-bar"><div class="soc-fill" id="socFill"></div></div></div>
+          <div class="tel-cell"><span class="lbl">Freq · KLA / IL</span><span class="val"><span id="hz50">50.00</span><small> / </small><span id="hz60b">60.00</span></span></div>
+        </div>
+        <div class="tel-foot"><span>NODE: URBANA-CERL-01</span><span>UPLINK: STABLE</span></div>
+      </aside>
+    </div>
+    <div class="stats reveal">
+      <div class="stat"><span class="stat-n" data-count="3" data-pad="1">00</span><span class="stat-l">Publications & presentations</span></div>
+      <div class="stat"><span class="stat-n" data-count="6" data-pad="1">00</span><span class="stat-l">Years running Nicollection</span></div>
+      <div class="stat"><span class="stat-n" data-count="2" data-pad="1">00</span><span class="stat-l">Countries, one research thread</span></div>
+      <div class="stat"><span class="stat-n" data-count="50" >0</span><span class="stat-l">Hz in Kampala — 60 Hz in Urbana</span></div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="marquee-track">
+      <span>Solar Mini-Grids</span><span>Contextual Engineering</span><span>IEEE PowerAfrica 2024</span><span>ERDC · CERL</span><span>DIgSILENT PowerFactory</span><span>AgriEnergy — Live on Play Store</span><span>IEEE Smart Village</span><span>Kampala → Urbana</span><span>UIUC PhD '25–'30</span>
+      <span>Solar Mini-Grids</span><span>Contextual Engineering</span><span>IEEE PowerAfrica 2024</span><span>ERDC · CERL</span><span>DIgSILENT PowerFactory</span><span>AgriEnergy — Live on Play Store</span><span>IEEE Smart Village</span><span>Kampala → Urbana</span><span>UIUC PhD '25–'30</span>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT ================= -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kick mono reveal">01 · About</span>
+      <h2 class="sec-title"><span class="mask"><span class="mask-inner">The current, <span class="it">so far.</span></span></span></h2>
+    </div>
+    <div class="about-grid">
+      <div class="about-sticky reveal">
+        <figure class="portrait">
+          <img src="nicole.jpeg" alt="Portrait of Nicole Kawako Juliana" loading="lazy">
+          <figcaption><span>N. Kawako Juliana</span><span>EST. KAMPALA</span></figcaption>
+        </figure>
+        <dl class="facts">
+          <div class="fact"><dt>Based</dt><dd>Urbana, Illinois</dd></div>
+          <div class="fact"><dt>From</dt><dd>Kampala, Uganda</dd></div>
+          <div class="fact"><dt>Degree</dt><dd>PhD Agricultural & Biological Engineering, UIUC — 2025–2030</dd></div>
+          <div class="fact"><dt>Advisor</dt><dd>Prof. Ann-Perry Witmer</dd></div>
+          <div class="fact"><dt>Group</dt><dd>Contextual Engineering Research Group</dd></div>
+          <div class="fact"><dt>Also</dt><dd>Founder & CEO, Nicollection · ISV Curriculum Coordinator</dd></div>
+        </dl>
+      </div>
+      <div class="about-body">
+        <p class="reveal">Makerere University gave me my first question: how do you keep power flowing between two solar mini-grids that were never designed to talk to each other? My final-year project answered it with a unified power flow control method — and carried me all the way to the stage of the 11th IEEE PES/IAS PowerAfrica Conference in Johannesburg with a publication in the IEEE Xplore Digital Library.</p>
+        <p class="reveal d1">Along the way I learned systems from the ground up — literally. During industrial training at the Uganda Electricity Transmission Company, I tested and commissioned transmission lines, pole plants and station auxiliaries, and helped re-energize a transformer at Kampala-North substation that had sat dark for eight months. In parallel I've built and run my own business, Nicollection, since 2020, and shipped real software at The Dojo Hub — including the AgriEnergy app, now live on the Play Store.</p>
+        <div class="pull reveal d2">"Energy systems aren't just engineered — they're contextual. The technology has to fit the place, the people, and the extremes they'll face."</div>
+        <p class="reveal d3">That conviction is what I'm now pursuing full-time as a PhD student in Agricultural and Biological Engineering at the University of Illinois Urbana-Champaign, under Professor Ann-Perry Witmer in the Contextual Engineering Research Group — and as a research intern at the US Army Engineer Research and Development Center (CERL), working on operational energy and the adaptive capacity of critical infrastructure.</p>
+        <div class="route reveal d3">
+          <svg viewBox="0 0 600 170" fill="none" xmlns="http://www.w3.org/2000/svg" aria-label="Route from Kampala to Urbana">
+            <path id="flightPath" d="M60 130 Q 300 10 540 62" stroke="#1D3C2F" stroke-width="1.5" stroke-dasharray="6 6" style="animation:marq 0s"/>
+            <circle cx="60" cy="130" r="7" fill="#CE6637"/>
+            <circle cx="540" cy="62" r="7" fill="#E9A13B"/>
+            <circle r="4.5" fill="#17251D">
+              <animateMotion dur="6s" repeatCount="indefinite"><mpath href="#flightPath"/></animateMotion>
+            </circle>
+            <text x="42" y="156" font-family="IBM Plex Mono" font-size="10" letter-spacing="2" fill="#17251D">KAMPALA · 50 Hz</text>
+            <text x="440" y="90" font-family="IBM Plex Mono" font-size="10" letter-spacing="2" fill="#17251D">URBANA · 60 Hz</text>
+            <text x="255" y="48" font-family="IBM Plex Mono" font-size="9" letter-spacing="2" fill="#6E8375">RENEWABLE ENERGY, BOTH WAYS</text>
+          </svg>
+          <div class="route-cap"><span>FIG. 01 — TRANSATLANTIC RESEARCH CIRCUIT</span><span>2021 → PRESENT</span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= FOCUS ================= -->
+<section id="focus">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kick mono reveal">02 · Focus</span>
+      <h2 class="sec-title"><span class="mask"><span class="mask-inner">Four ways I move <span class="it">energy</span> forward.</span></span></h2>
+      <p class="sec-sub reveal">Research, software, fieldwork and enterprise — different tools, one question: how do systems hold up where they're needed most?</p>
+    </div>
+    <div>
+      <article class="focus-row reveal">
+        <span class="focus-num">01</span>
+        <div>
+          <h3>Renewable Energy Research</h3>
+          <p>Solar mini-grids under pressure — power flow control between interconnected grids, adaptive capacity against extreme conditions, and contextual alignment of bioenergy technologies. Published in IEEE Xplore; presented in Johannesburg.</p>
+          <div class="focus-tags"><span class="chip">Solar mini-grids</span><span class="chip">Adaptive capacity</span><span class="chip">Critical infrastructure</span></div>
+        </div>
+        <span class="focus-arrow">→</span>
+      </article>
+      <article class="focus-row reveal d1">
+        <span class="focus-num">02</span>
+        <div>
+          <h3>Software & UX</h3>
+          <p>From requirements gathering to shipped product: project-managing the AgriEnergy mobile app (live on the Play Store) and designing the Dojo Hub certification platform in Figma, HTML and CSS — software that serves farmers and energy service companies.</p>
+          <div class="focus-tags"><span class="chip">AgriEnergy</span><span class="chip">Figma</span><span class="chip">HTML / CSS</span><span class="chip">APK QA</span></div>
+        </div>
+        <span class="focus-arrow">→</span>
+      </article>
+      <article class="focus-row reveal d2">
+        <span class="focus-num">03</span>
+        <div>
+          <h3>Field & Power Systems Engineering</h3>
+          <p>Hands-on with the grid itself: testing, commissioning and maintaining transmission lines, pole plants and station auxiliaries at UETCL — including re-energizing an eight-month-dark transformer at Kampala-North substation. Simulation in DIgSILENT PowerFactory.</p>
+          <div class="focus-tags"><span class="chip">Transmission & commissioning</span><span class="chip">DIgSILENT PowerFactory</span><span class="chip">UETCL</span></div>
+        </div>
+        <span class="focus-arrow">→</span>
+      </article>
+      <article class="focus-row reveal d3">
+        <span class="focus-num">04</span>
+        <div>
+          <h3>Leadership & Enterprise</h3>
+          <p>Founder and CEO of Nicollection since 2020 — brand, strategy, hiring and profitability. Curriculum coordinator for IEEE Smart Village's Sankofa Education Initiative, Uganda's representative shaping a global STREAM curriculum.</p>
+          <div class="focus-tags"><span class="chip">Nicollection</span><span class="chip">IEEE Smart Village</span><span class="chip">EWB Woodford</span></div>
+        </div>
+        <span class="focus-arrow">→</span>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ================= WORK ================= -->
+<section id="work">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kick mono reveal">03 · Selected Work</span>
+      <h2 class="sec-title"><span class="mask"><span class="mask-inner">Papers, apps <span class="it">&</span> build-outs.</span></span></h2>
+      <p class="sec-sub reveal">Tap any card for the full story.</p>
+    </div>
+    <div class="work-grid">
+
+      <article class="proj reveal">
+        <div class="proj-img"><span class="proj-cat">Research</span><img src="https://picsum.photos/seed/solar-minigrid-uganda/800/450" alt="Solar mini-grid in Uganda" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2025 → 2026</span><span>ERDC · Adaptive Capacity</span></div>
+          <h3>Solar Mini-Grids as Adaptive Capacity</h3>
+          <p>Authoring a paper on solar mini-grids as a resilience measure for critical infrastructure facing increased extreme conditions in Uganda — bound for the Target 4S Conference, June 2026.</p>
+        </div>
+        <button class="proj-toggle" aria-expanded="false">Full details <span class="sign">+</span></button>
+        <div class="proj-details"><div>
+          <p>Part of the ERDC project "Adaptive Capacity for Risk Analysis of Critical Infrastructure." The paper — "Evaluating the Increasing Importance of Solar Mini-Grids as a Measure of Adaptive Capacity in Response to Potential Increased Extreme Conditions in Uganda" — examines how distributed solar can harden essential services against climate-driven stress.</p>
+          <div class="focus-tags"><span class="chip">Risk analysis</span><span class="chip">Critical infrastructure</span><span class="chip">Uganda</span><span class="chip">Target 4S 2026</span></div>
+        </div></div>
+      </article>
+
+      <article class="proj reveal d1">
+        <div class="proj-img"><span class="proj-cat">Research</span><img src="https://picsum.photos/seed/power-flow-controller/800/450" alt="Power systems lab" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2023 → 2024</span><span>Makerere University</span></div>
+          <h3>Unified Power Flow Controller for Interconnected Mini-Grids</h3>
+          <p>Undergraduate research implementing a power flow control method for two interconnected solar mini-grids — published in the IEEE Xplore Digital Library.</p>
+        </div>
+        <button class="proj-toggle" aria-expanded="false">Full details <span class="sign">+</span></button>
+        <div class="proj-details"><div>
+          <p>"Implementation of a Unified Power Flow Controller for Two Interconnected Solar Mini-Grids" (2024). Presented at the 11th IEEE PES/IAS PowerAfrica Conference in Johannesburg and at Makerere's Integrated Smart Systems Group annual poster sessions. The work asked how separately built mini-grids can share load reliably once tied together.</p>
+          <div class="focus-tags"><span class="chip">IEEE Xplore</span><span class="chip">PowerAfrica</span><span class="chip">Power flow control</span></div>
+        </div></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-img"><span class="proj-cat">Research</span><img src="https://picsum.photos/seed/sugarcane-bagasse-drying/800/450" alt="Sugarcane processing" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2025 → Present</span><span>ERDC · AFRICOM DORE ICE</span></div>
+          <h3>Sugarcane Bagasse Drying — Contextual Alignment</h3>
+          <p>Collaborating with the University of Huddersfield, UK, on a comparative analysis of sugarcane bagasse drying technologies under the AFRICOM operational energy effort.</p>
+        </div>
+        <button class="proj-toggle" aria-expanded="false">Full details <span class="sign">+</span></button>
+        <div class="proj-details"><div>
+          <p>Workstream of the Operational Energy (OE) Africa Command Defense Operational Resilience International Cooperation effort at CERL. The in-progress paper, "Contextual Alignment of Sugarcane Bagasse Drying Technologies: A Comparative Analysis," evaluates which drying approaches actually fit local conditions rather than just performing on paper.</p>
+          <div class="focus-tags"><span class="chip">Bioenergy</span><span class="chip">U. of Huddersfield</span><span class="chip">Operational energy</span></div>
+        </div></div>
+      </article>
+
+      <article class="proj reveal d1">
+        <div class="proj-img"><span class="proj-cat">Software</span><img src="https://picsum.photos/seed/agrienergy-mobile-app/800/450" alt="AgriEnergy mobile app" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2024</span><span>The Dojo Hub</span></div>
+          <h3>AgriEnergy Mobile App</h3>
+          <p>Project-managed the AgriEnergy app from requirements to release — now live on the Play Store, supporting social change for farmers and energy service companies.</p>
+        </div>
+        <button class="proj-toggle" aria-expanded="false">Full details <span class="sign">+</span></button>
+        <div class="proj-details"><div>
+          <p>Collaborated with stakeholders and developers to gather and implement requirements, and ran regular APK testing to keep every release bug-free and true to spec. The app connects agricultural producers with energy services — a practical bridge between two worlds I care deeply about.</p>
+          <div class="focus-tags"><span class="chip">Product management</span><span class="chip">Android QA</span><span class="chip">Play Store</span></div>
+        </div></div>
+      </article>
+
+      <article class="proj reveal">
+        <div class="proj-img"><span class="proj-cat">Design</span><img src="https://picsum.photos/seed/dojo-certification-platform/800/450" alt="Certification platform interface" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2024</span><span>The Dojo Hub</span></div>
+          <h3>Dojo Hub Certification Platform</h3>
+          <p>UI/UX design for a visually engaging platform where learners manage and complete certificate programs and courses.</p>
+        </div>
+        <button class="proj-toggle" aria-expanded="false">Full details <span class="sign">+</span></button>
+        <div class="proj-details"><div>
+          <p>Designed the interface and visual language for course enrollment, progress tracking and certification — balancing clarity for first-time learners with the structure an institution needs. Delivered in Figma with HTML/CSS implementation support.</p>
+          <div class="focus-tags"><span class="chip">UI/UX</span><span class="chip">Figma</span><span class="chip">EdTech</span></div>
+        </div></div>
+      </article>
+
+      <article class="proj reveal d1">
+        <div class="proj-img"><span class="proj-cat">Civic</span><img src="https://picsum.photos/seed/water-treatment-secor/800/450" alt="Water treatment infrastructure" loading="lazy"></div>
+        <div class="proj-body">
+          <div class="proj-meta"><span>2025 → Present</span><span>EWB — Woodford Project</span></div>
+          <h3>Secor Village Water Treatment Plant</h3>
+          <p>With Engineers Without Borders, writing project plans and preliminary engineering reports to secure funding for a new water treatment plant in the Village of Secor.</p>
+        </div>
+        <button class="proj-toggle" aria-expanded="false">Full details <span class="sign">+</span></button>
+        <div class="proj-details"><div>
+          <p>Infrastructure that changes a community's daily life — the same logic as a mini-grid lighting a village. I contribute engineering documentation that turns an idea into a fundable, buildable project.</p>
+          <div class="focus-tags"><span class="chip">Water infrastructure</span><span class="chip">Engineering reports</span><span class="chip">Community</span></div>
+        </div></div>
+      </article>
+
+    </div>
+  </div>
+</section>
+
+<!-- ================= TIMELINE ================= -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kick mono reveal">04 · Timeline</span>
+      <h2 class="sec-title"><span class="mask"><span class="mask-inner">Route <span class="it">&</span> record.</span></span></h2>
+      <p class="sec-sub reveal">Where I've worked, studied and built — filter by track.</p>
+    </div>
+    <div class="tfilters reveal">
+      <button class="tfilter active" data-f="all">All</button>
+      <button class="tfilter" data-f="research">Research</button>
+      <button class="tfilter" data-f="work">Work</button>
+      <button class="tfilter" data-f="education">Education</button>
+      <button class="tfilter" data-f="volunteer">Volunteer</button>
+      <button class="tfilter" data-f="venture">Venture</button>
+    </div>
+    <div class="timeline" id="tl">
+      <div class="tl-line"><div class="tl-fill" id="tlFill"></div></div>
+
+      <div class="tl-item" data-cat="education"><div class="tl-date">2025 — 2030 <span class="tl-tag">Education</span></div><h3>PhD, Agricultural & Biological Engineering</h3><span class="tl-org">University of Illinois Urbana-Champaign</span><p>Doctoral research in renewable energy systems under Prof. Ann-Perry Witmer, Contextual Engineering Research Group.</p></div>
+
+      <div class="tl-item" data-cat="research"><div class="tl-date">JUN 2025 — PRESENT <span class="tl-tag">Research</span></div><h3>Research Intern</h3><span class="tl-org">US Army ERDC — CERL, Champaign, IL · Emergency & Operational Support Branch</span><p>Two active efforts: OE AFRICOM Defense Operational Resilience International Cooperation (sugarcane bagasse drying, with the University of Huddersfield) and Adaptive Capacity for Risk Analysis of Critical Infrastructure (solar mini-grid paper for Target 4S 2026).</p></div>
+
+      <div class="tl-item" data-cat="volunteer"><div class="tl-date">AUG 2025 — PRESENT <span class="tl-tag">Volunteer</span></div><h3>Member, Woodford Project</h3><span class="tl-org">Engineers Without Borders</span><p>Writing project plans and preliminary engineering reports to secure funding for a new water treatment plant in the Village of Secor.</p></div>
+
+      <div class="tl-item" data-cat="volunteer"><div class="tl-date">OCT 2024 — PRESENT <span class="tl-tag">Volunteer</span></div><h3>Sankofa Curriculum Coordinator, ISV Engagement Committee</h3><span class="tl-org">IEEE Smart Village</span><p>Ugandan representative developing a STREAM curriculum (Science, Technology, Reading, Engineering, Art, Mathematics) for marginalized and impoverished communities worldwide; coordinating curriculum development meetings and helping organize the annual IEEE PowerAfrica Conference.</p></div>
+
+      <div class="tl-item" data-cat="work"><div class="tl-date">JUN 2024 — FEB 2025 <span class="tl-tag">Work</span></div><h3>Project Manager</h3><span class="tl-org">The Dojo Hub</span><p>Gathered and implemented requirements with stakeholders and developers for the AgriEnergy mobile app — now on the Play Store — and performed regular APK testing to keep releases bug-free.</p></div>
+
+      <div class="tl-item" data-cat="work"><div class="tl-date">JAN 2024 — SEPT 2024 <span class="tl-tag">Work</span></div><h3>UI/UX Designer</h3><span class="tl-org">The Dojo Hub</span><p>Created the visually engaging Dojo Hub certification platform for managing and completing certificate programs and courses.</p></div>
+
+      <div class="tl-item" data-cat="research"><div class="tl-date">AUG 2023 — MAY 2024 <span class="tl-tag">Research</span></div><h3>Undergraduate Researcher</h3><span class="tl-org">Makerere University</span><p>Implemented a power flow control method for interconnected solar mini-grids; resulting in an IEEE Xplore publication and a PowerAfrica Conference presentation.</p></div>
+
+      <div class="tl-item" data-cat="education"><div class="tl-date">MAR 2021 — MAY 2024 <span class="tl-tag">Education</span></div><h3>BSc, Electrical Engineering</h3><span class="tl-org">Makerere University</span><p>Core engineering training, solar systems design certification (CREEC, 2024), and a final-year project that set the direction of everything since.</p></div>
+
+      <div class="tl-item" data-cat="work"><div class="tl-date">JUN 2023 — AUG 2023 <span class="tl-tag">Work · Field</span></div><h3>Industrial Trainee</h3><span class="tl-org">Uganda Electricity Transmission Company Ltd (UETCL)</span><p>Testing, commissioning, installation and maintenance of transmission lines, pole plants, station auxiliaries and station gears. Re-energized a transformer at Kampala-North substation that had been out of service for eight months.</p></div>
+
+      <div class="tl-item" data-cat="work"><div class="tl-date">JUL 2022 — SEPT 2022 <span class="tl-tag">Work</span></div><h3>Software Mentor</h3><span class="tl-org">The Dojo Hub</span><p>First undergraduate intern to complete a newly developed software course; entrusted to mentor junior interns through knowledge sharing, code reviews and troubleshooting support.</p></div>
+
+      <div class="tl-item" data-cat="venture"><div class="tl-date">JUL 2020 — PRESENT <span class="tl-tag">Venture</span></div><h3>Founder & CEO</h3><span class="tl-org">Nicollection Limited</span><p>Built a perfume business from scratch — brand identity, growth and profitability strategy, and leading the executive team through hiring, training and performance evaluation.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= PUBLICATIONS ================= -->
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kick mono reveal">05 · Publications & Presentations</span>
+      <h2 class="sec-title"><span class="mask"><span class="mask-inner">In print <span class="it">&</span> on stage.</span></span></h2>
+    </div>
+    <div class="reveal">
+      <div class="pub"><span class="pub-n">01</span><div><h3>"Evaluating the Increasing Importance of Solar Mini-Grids as a Measure of Adaptive Capacity in Response to Potential Increased Extreme Conditions in Uganda"</h3><span class="pub-status">To be presented · June 2026</span></div><span class="pub-meta">Target 4S<br>Conference</span></div>
+      <div class="pub"><span class="pub-n">02</span><div><h3>"Contextual Alignment of Sugarcane Bagasse Drying Technologies: A Comparative Analysis"</h3><span class="pub-status">In progress · with University of Huddersfield</span></div><span class="pub-meta">ERDC · AFRICOM<br>OE / DORE ICE</span></div>
+      <div class="pub"><span class="pub-n">03</span><div><h3>"Implementation of a Unified Power Flow Controller for Two Interconnected Solar Mini-Grids"</h3></div><span class="pub-meta">IEEE Xplore<br>2024 · Published</span></div>
+      <div class="pub"><span class="pub-n">04</span><div><h3>11th IEEE PES/IAS PowerAfrica Conference — Project Presentation</h3></div><span class="pub-meta">Johannesburg, SA<br>Oct 2024</span></div>
+      <div class="pub"><span class="pub-n">05</span><div><h3>Integrated Smart Systems Group — Annual Academic Poster Presentations</h3></div><span class="pub-meta">Makerere CEDAT<br>2024</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= TOOLKIT ================= -->
+<section id="toolkit">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-kick mono reveal">06 · Toolkit</span>
+      <h2 class="sec-title"><span class="mask"><span class="mask-inner">Instruments <span class="it">&</span> capacity.</span></span></h2>
+      <p class="sec-sub reveal">Measured the way I know best — as load-bearing capacity.</p>
+    </div>
+    <div class="tool-grid">
+      <div class="bars reveal" id="skillBars">
+        <div class="skill"><div class="skill-top"><span>DIgSILENT PowerFactory — power systems simulation</span><span class="mono">92%</span></div><div class="track"><div class="fill" data-w="92%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Research design, analysis & writing</span><span class="mono">90%</span></div><div class="track"><div class="fill" data-w="90%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Figma — UI/UX design</span><span class="mono">85%</span></div><div class="track"><div class="fill" data-w="85%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>HTML & CSS</span><span class="mono">78%</span></div><div class="track"><div class="fill" data-w="78%"></div></div></div>
+        <div class="skill"><div class="skill-top"><span>Leadership & team coordination</span><span class="mono">94%</span></div><div class="track"><div class="fill" data-w="94%"></div></div></div>
+      </div>
+      <div class="tool-side">
+        <h3 class="reveal">Field & practice</h3>
+        <div class="focus-tags reveal d1"><span class="chip">Transmission line testing</span><span class="chip">Commissioning</span><span class="chip">Power flow control</span><span class="chip">APK / QA testing</span><span class="chip">Requirements gathering</span><span class="chip">STREAM curriculum design</span><span class="chip">Brand identity</span><span class="chip">Solar systems design</span></div>
+        <h3 class="reveal d2">Soft skills</h3>
+        <div class="focus-tags reveal d2"><span class="chip">Research</span><span class="chip">Leadership</span><span class="chip">Teamwork</span></div>
+        <div class="cert reveal d3">
+          <h4>Solar Systems Design & Installation</h4>
+          <p>Center for Research in Energy and Energy Conservation (CREEC), 2024 — part of the "Integration of On-Grid and Off-Grid Decentralized Renewable Energy Systems in Uganda" project, funded by the Makerere Research and Innovation Fund.</p>
+          <span class="mono">Makerere University · 2024</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= CONTACT ================= -->
+<section id="contact">
+  <div class="wrap">
+    <span class="sec-kick mono reveal">07 · Contact</span>
+    <h2 class="contact-title"><span class="mask"><span class="mask-inner">Let's build something <span class="it">that lasts.</span></span></span></h2>
+    <div class="c-rows reveal">
+      <a class="c-row" href="mailto:kawaako2@illinois.edu"><span class="mono">Email</span><span>kawaako2@illinois.edu</span><span class="arrow">→</span></a>
+      <a class="c-row" href="tel:+12172553735"><span class="mono">Phone</span><span>+1 (217) 255-3735</span><span class="arrow">→</span></a>
+      <a class="c-row" href="https://www.linkedin.com/in/kawaako-nicole-juliana" target="_blank" rel="noopener"><span class="mono">LinkedIn</span><span>linkedin.com/in/kawaako-nicole-juliana</span><span class="arrow">→</span></a>
+    </div>
+    <div class="refs reveal">
+      <h3>References</h3>
+      <div class="ref-grid">
+        <div class="ref"><strong>Prof. Ann-Perry Witmer</strong><span class="mono">Doctoral Advisor · UIUC</span><span class="email">awitmer@illinois.edu</span></div>
+        <div class="ref"><strong>Jessica Lyons</strong><span class="mono">Supervisor · CERL, US Army ERDC</span><span class="email">Jessica.W.Lyons@usace.army.mil</span></div>
+        <div class="ref"><strong>David Tusubira</strong><span class="mono">CEO · The Dojo Hub</span><span class="email">tusdavi4@gmail.com</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap foot">
+    <span>© 2026 Nicole Kawako Juliana — Kampala · Urbana</span>
+    <span>Running at <span id="hzFoot">60.00</span> Hz</span>
+    <a href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<script>
+(function(){
+  const reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced){ document.querySelectorAll('animateMotion').forEach(a=>a.remove()); }
+
+  /* ---------- nav ---------- */
+  const nav = document.getElementById('nav');
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinks = document.getElementById('navLinks');
+  menuBtn.addEventListener('click',()=>{
+    document.body.classList.toggle('nav-open');
+    menuBtn.textContent = document.body.classList.contains('nav-open') ? 'CLOSE' : 'MENU';
+  });
+  navLinks.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+    document.body.classList.remove('nav-open'); menuBtn.textContent='MENU';
+  }));
+
+  /* ---------- observers: reveals / masks / bars / stats ---------- */
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(!e.isIntersecting) return;
+      const el = e.target;
+      el.classList.add('in');
+      if(el.id==='skillBars'){ el.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w); }
+      el.querySelectorAll('.stat-n[data-count]').forEach(countUp);
+      io.unobserve(el);
+    });
+  },{threshold:.18});
+  document.querySelectorAll('.reveal,.mask,#skillBars,.stats').forEach(el=>io.observe(el));
+
+  function countUp(el){
+    const target = +el.dataset.count, pad = el.dataset.pad;
+    if(reduced){ el.textContent = pad ? String(target).padStart(2,'0') : target; return; }
+    const dur = 1300, t0 = performance.now();
+    (function step(t){
+      const k = Math.min(1,(t-t0)/dur), e = 1-Math.pow(1-k,3), v = Math.round(target*e);
+      el.textContent = pad ? String(v).padStart(2,'0') : v;
+      if(k<1) requestAnimationFrame(step);
+    })(t0);
+  }
+
+  /* ---------- active nav link ---------- */
+  const secIO = new IntersectionObserver((es)=>{
+    es.forEach(e=>{
+      if(!e.isIntersecting) return;
+      navLinks.querySelectorAll('a').forEach(a=>a.classList.toggle('active', a.getAttribute('href')==='#'+e.target.id));
+    });
+  },{rootMargin:'-40% 0px -55% 0px'});
+  document.querySelectorAll('section[id]').forEach(s=>secIO.observe(s));
+
+  /* ---------- scroll: nav bg + timeline fill ---------- */
+  const tl = document.getElementById('tl'), tlFill = document.getElementById('tlFill');
+  let ticking=false;
+  function onScroll(){
+    if(ticking) return; ticking=true;
+    requestAnimationFrame(()=>{
+      nav.classList.toggle('scrolled', window.scrollY>24);
+      if(tl){
+        const r = tl.getBoundingClientRect(), vh = window.innerHeight;
+        const p = Math.min(1, Math.max(0,(vh*.55 - r.top)/r.height));
+        tlFill.style.height = (p*100)+'%';
+      }
+      ticking=false;
+    });
+  }
+  window.addEventListener('scroll',onScroll,{passive:true});
+  onScroll();
+
+  /* ---------- project card expand ---------- */
+  document.querySelectorAll('.proj-toggle').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+      const card = btn.closest('.proj');
+      const open = card.classList.toggle('open');
+      btn.setAttribute('aria-expanded',open);
+    });
+  });
+
+  /* ---------- timeline filters ---------- */
+  document.querySelectorAll('.tfilter').forEach(b=>{
+    b.addEventListener('click',()=>{
+      document.querySelectorAll('.tfilter').forEach(x=>x.classList.remove('active'));
+      b.classList.add('active');
+      const f = b.dataset.f;
+      document.querySelectorAll('.tl-item').forEach(it=>{
+        it.classList.toggle('hide', f!=='all' && !it.dataset.cat.includes(f));
+      });
+    });
+  });
+
+  /* ---------- telemetry tickers ---------- */
+  const pv = document.getElementById('pv'), soc=document.getElementById('soc'),
+        socFill=document.getElementById('socFill'), hz50=document.getElementById('hz50'),
+        hz60=document.getElementById('hz60'), hz60b=document.getElementById('hz60b'),
+        hzFoot=document.getElementById('hzFoot');
+  let socVal = 72;
+  function tick(){
+    socVal = Math.min(84, Math.max(58, socVal + (Math.random()*2-1)));
+    const p = (36+Math.random()*12).toFixed(1);
+    const f5 = (49.97+Math.random()*0.06).toFixed(2);
+    const f6 = (59.97+Math.random()*0.06).toFixed(2);
+    if(pv) pv.innerHTML = p+' <small>kW</small>';
+    if(soc) soc.innerHTML = Math.round(socVal)+'<small>%</small>';
+    if(socFill) socFill.style.width = Math.round(socVal)+'%';
+    if(hz50) hz50.textContent=f5;
+    [hz60,hz60b,hzFoot].forEach(el=>{ if(el) el.textContent=f6; });
+  }
+  tick();
+  setInterval(tick, reduced?4000:1600);
+
+  /* ---------- scramble kicker ---------- */
+  const kick = document.getElementById('heroKick');
+  if(kick && !reduced){
+    const txt = kick.dataset.text, chars='—/\\<>[]{}#*01';
+    let frame=0, total=42;
+    (function run(){
+      frame++;
+      const prog = frame/total; let out='';
+      for(let i=0;i<txt.length;i++){
+        out += (i < prog*txt.length) ? txt[i] : (txt[i]===' ' ? ' ' : chars[(Math.random()*chars.length)|0]);
+      }
+      kick.textContent = out;
+      if(frame<total) requestAnimationFrame(run); else kick.textContent = txt;
+    })();
+  }
+
+  /* ---------- oscilloscope wave ---------- */
+  const cv = document.getElementById('wave');
+  if(cv){
+    const ctx = cv.getContext('2d');
+    let phase = 0, W, H;
+    function size(){
+      const dpr = window.devicePixelRatio||1;
+      W = cv.clientWidth; H = 130;
+      cv.width = W*dpr; cv.height = H*dpr;
+      ctx.setTransform(dpr,0,0,dpr,0,0);
+    }
+    function draw(){
+      ctx.clearRect(0,0,W,H);
+      ctx.strokeStyle='rgba(244,238,223,.12)'; ctx.lineWidth=1;
+      ctx.beginPath(); ctx.moveTo(0,H/2); ctx.lineTo(W,H/2); ctx.stroke();
+      for(let g=0;g<5;g++){ const x=(W/5)*g; ctx.beginPath(); ctx.moveTo(x,0); ctx.lineTo(x,H); ctx.stroke(); }
+      ctx.beginPath();
+      for(let x=0;x<=W;x++){
+        const y = H/2 + Math.sin(x*0.028+phase)*34 + Math.sin(x*0.052+phase*1.6)*9;
+        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+      }
+      ctx.strokeStyle='#E9A13B'; ctx.lineWidth=2; ctx.stroke();
+      ctx.beginPath();
+      for(let x=0;x<=W;x++){
+        const y = H/2 + Math.sin(x*0.02+phase*0.6)*20;
+        x===0 ? ctx.moveTo(x,y) : ctx.lineTo(x,y);
+      }
+      ctx.strokeStyle='rgba(206,102,55,.5)'; ctx.lineWidth=1.2; ctx.stroke();
+    }
+    size(); window.addEventListener('resize',()=>{size(); if(reduced) draw();});
+    if(reduced){ draw(); }
+    else{ (function loop(){ phase+=0.045; draw(); requestAnimationFrame(loop); })(); }
+  }
+})();
+</script>
+</body>
+</html>
